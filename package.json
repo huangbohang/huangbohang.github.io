@@ -7,7 +7,6 @@
   "main": "index.js",
   "scripts": {
     "dev": "vitepress dev",
-    "upload": "./deploy.sh",
 
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
