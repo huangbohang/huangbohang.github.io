@@ -82,6 +82,7 @@ export default defineConfig({
       { rel: 'canonical', href: canonicalUrl }
     ])
   },
+  appearance:'dark',
   lastUpdated: true,
   title: "技术总结备忘录",
   titleTemplate: "黄博航的博客",
@@ -96,12 +97,9 @@ export default defineConfig({
     nav: [
       { text: '技术总结', link: '/summary/',activeMatch: '^/summary/' },
       { text: '问题解析', link: '/question/',activeMatch: '^/question/' },
-      // { text: '个人成长', link: '/growth/',activeMatch: '^/growth/' }
-      { text: '摄影集锦', link: '/photo/',activeMatch: '^/photo/' },
       { text: '开源项目',items: [
-        { text: 'electron-prokit', link: 'https://huangbohang.github.io/electron-prokit/' },
-        { text: 'FindAll', link: 'https://findallteam.github.io/' },
-        { text: 'XTools', link: 'https://huangbohangxu.com/XTools/' },
+        { text: '页面导出word', link: 'https://github.com/huangbohang/export-word' },
+        { text: '飞书插件', link: 'https://github.com/huangbohang/donwload-files' },
       ]},
       { text: '关于我', link: '/about/',activeMatch: '^/about/' },
     ],
@@ -180,15 +178,7 @@ export default defineConfig({
                 },
               ]
             },
-            {
-              text: 'XTools系列',
-              items: [
-                {
-                  text: '纯前端实现图片切割,一键导出多张分割图片',
-                  link: '/summary/xtools/image-slicing'
-                },
-              ]
-            },
+  
             {
               text: '一些实践',
               items: [
@@ -304,28 +294,8 @@ export default defineConfig({
             }
           ]
         }
-      ],
-      // '/growth/': [
-      //   {
-      //     text: '个人成长',
-      //     // items: [
-      //     //   {
-      //     //     text: '成长1',
-      //     //     link: '/growth/'
-      //     //   },
-      //     // ]
-      //   }
-      // ]
-      '/photo/':[
-        {
-          text:'2024-03-09',
-          link:'/photo/2024-03-09'
-        },
-        {
-          text:'2024-03-16',
-          link:'/photo/2024-03-16'
-        }
       ]
+  
     },
 
     socialLinks: [

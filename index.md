@@ -3,16 +3,9 @@
 layout: home
 
 hero:
-  name: "huangbohang's blog"
+  name: "hbh's blog"
   text: "一个写博客的地方"
-  # tagline: My great project tagline
-  # actions:
-  #   - theme: brand
-  #     text: 看看我的GitHub
-  #     link: https://github.com/huangbohang
-    # - theme: alt
-    #   text: API Examples
-    #   link: /api-examples
+
 
 features:
   - icon: 📖
@@ -23,24 +16,18 @@ features:
     title: 问题解析
     details: 一些问题解析，把一个问题研究清楚
     link: /question/
-  - icon: 📷
-    title: 摄影集锦
-    details: 一些摄影集锦，记录生活中的美好瞬间
-    link: /photo/
+
 
   - icon: 🔧
-    title: Electron-Prokit
-    details: 一款基于Electron的桌面软件开发框架 
-    link: https://huangbohang.github.io/electron-prokit/
+    title: 页面导出word
+    details: 借鉴jquery-word-export方式，开发了一个npm包，剔除jq，同时支持图片、以及样式的导出 
+    link: https://huangbohang.github.io/export-word/examples/
 
-  - icon: 🔍
-    title: FindAll
-    details: 自动化分析网络安全应急响应工具
-    link: https://findallteam.github.io/
+  - icon: 🗂️
+    title: 飞书插件
+    details: 飞书插件，附件批量下载
+    link: https://p6bgwki4n6.feishu.cn/base/extension/replit_3c2a31f9726de3e4?
   
-  - icon: 🧰
-    title: XTools
-    details: 一款功能强大的在线工具集合
-    link: https://huangbohangxu.com/XTools/
+
 ---
 
