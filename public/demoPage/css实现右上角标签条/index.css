@@ -1,0 +1,53 @@
+body {
+    background: black;
+    padding:20%;
+    display: flex;
+    gap:20px;
+  }
+  .card1{
+    width:200px;
+    height:200px;
+    position:relative;
+    background: #fff;
+    overflow: hidden;
+  }
+  .b{
+    width:100px;
+    height:100px;
+    position: absolute;
+    /*background: green;*/
+    top:-50px;
+    right:-50px;
+    transform: rotate(45deg);
+  }
+  .b span{
+    position: absolute;
+    bottom:0;
+    display: block;
+    font-size:16px;
+    color:#fff;
+    background: #36A8FF;
+    width:100px;
+    text-align: center;
+  }
+
+
+
+  .card2 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  .tag {
+    position: absolute;
+    top: 15px;
+    left: 70px;
+    width: 100%;
+    color: #fff;
+    background-color: #4B5CC4;
+    text-align: center;
+    letter-spacing: 5px;
+    transform: rotate(45deg);;
+  }

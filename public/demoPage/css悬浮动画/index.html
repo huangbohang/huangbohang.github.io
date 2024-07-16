@@ -1,0 +1,75 @@
+<!--
+ * @Author: your name
+ * @Date: 2023-10-03 13:43:13
+ * @LastEditTime: 2023-10-03 14:19:52
+ * @LastEditors: DESKTOP-536UVPC
+ * @Description: In User Settings Edit
+ * @FilePath: \css-special-effects\css悬浮动画.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悬浮动画</title>
+</head>
+
+<body>
+    <button class="btn">悬浮动画</button>
+</body>
+<style>
+    /* 让.btn上下左右居中方法1 */
+    body{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn {
+        background-color: transparent;
+        border-radius: 5px;
+        border: 2px solid purple;
+        color: purple;
+        padding: 10px 20px;
+        font-weight: bold;
+        position: relative;
+        overflow: hidden;
+    }
+    .btn::before{
+        content: '';
+        height: 100%;
+        width: 0%;
+        position: absolute;
+        left: -30px;
+        top: 0px;
+        background-color: purple;
+        transform: skewX(45deg);
+        transition: all 1s;
+        z-index: -1;
+    }
+    .btn.btn:hover{
+        color: white;
+    }
+    .btn:hover::before{
+        width: 180%;
+    }
+    /* 让.btn上下左右居中方法2*/
+    /* body{
+        height: 100vh;
+    }
+    .btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background-color: transparent;
+        border-radius: 5px;
+        border: 2px solid purple;
+        color: purple;
+        padding: 10px 20px;
+    } */
+</style>
+
+</html>

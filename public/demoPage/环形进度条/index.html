@@ -1,0 +1,150 @@
+<!--
+ * @Author: your name
+ * @Date: 2023-10-03 15:36:58
+ * @LastEditTime: 2023-10-03 16:16:30
+ * @LastEditors: DESKTOP-536UVPC
+ * @Description: In User Settings Edit
+ * @FilePath: \css-special-effects\环形进度条.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>环形进度条</title>
+</head>
+
+<body>
+    <div class="percent">
+        <svg>
+            <circle cx="70" cy="70" r="70" />
+            <circle id="circle" cx="70" cy="70" r="70" />
+        </svg>
+        <div class="num">
+            <h2>
+                <span id="per">0</span>
+                <span>%</span>
+            </h2>
+        </div>
+    </div>
+    <button class="btn" onclick="begin_progress()">开始</button>
+</body>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .percent {
+        position: relative;
+        width: 150px;
+        height: 150px;
+    }
+
+    .percent svg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .percent svg circle {
+        fill: none;
+        stroke-width: 10;
+        stroke: #1258e3;
+        transform: translate(5px, 5px);
+        /* 设置虚线长度 = 圆的周长（2*70*3.1415926） */
+        stroke-dasharray: 440;
+        /* 设置圆的空白间隙 */
+        stroke-dashoffset: 440;
+    }
+
+    .percent svg circle:nth-child(1) {
+        stroke-dashoffset: 0;
+        stroke: #f3f3f3;
+    }
+
+    .percent svg circle:nth-child(2) {
+        stroke-dashoffset: calc(440 - 440*(0/100));
+        stroke: #1258e3;
+    }
+
+    .percent .num {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #per {
+        font-size: 48px;
+    }
+
+    .btn {
+        margin-left: 50px;
+        position: relative;
+        height: 40px;
+        width: 100px;
+        background-color: transparent;
+        border-radius: 5px;
+        border: 2px solid purple;
+        color: purple;
+        padding: 10px 20px;
+        font-weight: bold;
+        overflow: hidden;
+    }
+
+    .btn::before {
+        content: '';
+        height: 100px;
+        width: 0%;
+        position: absolute;
+        left: -30px;
+        top: 0px;
+        background-color: purple;
+        transform: skewX(45deg);
+        transition: all 1s;
+        z-index: -1;
+    }
+
+    .btn.btn:hover {
+        color: white;
+        cursor: pointer;
+    }
+
+    .btn:hover::before {
+        width: 180px;
+    }
+</style>
+<script>
+    let blo = false
+    function begin_progress() {
+        if (blo){
+            return
+        }
+        blo = true
+        const circle = document.querySelector('#circle')
+        const per = document.querySelector('#per')
+        let num = 0
+        const timer = setInterval(() => {
+            num += 1
+            if (num > 100) {
+                num = 100
+                clearInterval(timer)
+                blo = false
+            }
+            // 设置进度
+            circle.style.strokeDashoffset = `calc(440 - 440*(${num}/100))`
+            per.innerHTML = num
+        }, 100)
+    }
+</script>
+
+</html>

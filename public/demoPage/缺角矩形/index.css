@@ -1,0 +1,172 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+  }
+  .part{
+    display: flex;
+    gap:10px;
+  }
+  .part1 .rect1 {
+    width: 108px;
+    height: 36px;
+    background: #2c4266;
+    border: 2px solid #45d2fb;
+    box-shadow: 0px 2px 6px 0px rgba(17,37,70,0.6), 0px 0px 10px 0px #45d2fb inset; 
+    transform: skewX(-20deg);
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    display: inline-block;
+  }
+  .part1 .rect1 p {
+    margin: 0;
+    transform: skewX(20deg);
+  }
+
+  .part1 .rect2 {
+    width: 108px;
+    height: 36px;
+    background: #244675;
+    border: 1px solid;
+    border-image: linear-gradient(180deg, #26759a, #6196da) 1 1;
+    transform: skewX(-20deg);
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    line-height: 35px;
+  }
+  .part1 .rect2 p {
+    margin: 0;
+    transform: skewX(20deg);
+  }
+
+
+  .part1 .rect3 {
+    position: relative;
+    padding-left: 20px;
+
+  }
+  .part1 .rect3 .text{
+
+    width: 240px;
+    height: 48px;
+    background: #326f7d;
+    border: 2px solid #45d2fb;
+    box-shadow: 0px 2px 6px 0px #112546, 0px 0px 10px 0px #45d2fb inset;
+    
+    text-align: center;
+    line-height: 45px;
+    color: #ffffff;
+    display: inline-block;
+  }
+.part1 .help {
+    position: absolute;
+    left: 12px;
+    width: 20px;
+    height: 48px;
+    background: #326f7d;
+    border: 2px solid #45d2fb;
+    box-shadow: 0px 2px 6px 0px #112546, 0px 0px 10px 0px #45d2fb inset;
+    
+    transform: skewX(-20deg);
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.part2 .bg {
+    width: 120px;
+    height: 80px;
+    background: #58a;
+}
+
+/* 下文元素都使用了此样式 */
+.part2 .rect {
+ 
+    background: linear-gradient(135deg, transparent 10px, #58a 0) top left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.part2 .rect2 {
+    width: 364px;
+    height: 226px;
+    background: linear-gradient(136deg, #4899d0 2%, #2656a4 99%);
+    border: 2px solid #36c9f3;
+    box-shadow: 0px 6px 18px 0px rgba(15, 29, 52, 0.5);
+
+    margin-top: 20px;
+}
+
+.part2 .rect3 {
+    width: 364px;
+    height: 226px;
+    background: linear-gradient(136deg, #3066a6 2%, #315389 99%);
+    border: 1px solid #4172c2;
+    box-shadow: 0px 2px 6px 0px rgba(22, 40, 69, 0.5);
+    margin-top: 20px;
+}
+
+.part2 .cover {
+    position: relative;
+}
+
+.part2 .cover::before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 10px solid #fff;
+    border-top-color: transparent;
+    border-left-color: transparent;
+}
+
+.part2 .cover::after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 10px solid #fff;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+}
+
+.part2 .out-rect {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 80px;
+    padding: 5px;
+    background: linear-gradient(-45deg, transparent 10px, #58a 0) top right;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.part2 .in-rect {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent 8px, #fff 0) top right;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

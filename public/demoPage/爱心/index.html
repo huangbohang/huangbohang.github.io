@@ -1,0 +1,73 @@
+<!--
+ * @Author: your name
+ * @Date: 2023-10-03 20:16:45
+ * @LastEditTime: 2023-10-03 20:29:54
+ * @LastEditors: DESKTOP-536UVPC
+ * @Description: In User Settings Edit
+ * @FilePath: \css-special-effects\爱心.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱心</title>
+</head>
+<body>
+    <div class="heart"></div>
+</body>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-color: #11171e;
+    }
+    .heart{
+        width: 200px;
+        height: 200px;
+        background-color: #f20044;
+        position: relative;
+        transform: rotate(-45deg);
+        box-shadow: -10px 10px 90px #f20044;
+        /* 调用动画 */
+        animation: bounce 0.8s linear infinite;
+    }
+    /* 左边半圆 */
+    .heart::before{
+        content: '';
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        background-color: #f20044;
+        top: -50%;
+        border-radius: 100px;
+        box-shadow: -10px 10px 90px #f20044;
+    }
+    /* 右边半圆 */
+    .heart::after{
+        content: '';
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        background-color: #f20044;
+        right: -50%;
+        border-radius: 100px;
+        box-shadow: -10px 10px 90px #f20044;
+    }
+    @keyframes bounce{
+        0%{
+            transform: rotate(-45deg) scale(1.07);
+        }
+        80%{
+            transform: rotate(-45deg) scale(1);
+        }
+        100%{
+            transform: rotate(-45deg) scale(0.8);
+        }
+    }
+</style>
+</html>

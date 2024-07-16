@@ -1,0 +1,26 @@
+{
+  "name": "huangbohang-blog",
+  "title": "huangbohang Blog",
+  "version": "2.0.0",
+  "homepage": "https://huangbohang.github.io",
+  "description": "huangbohang Blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev",
+    "node": "node index.js",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "author": "huangbohang",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.8",
+    "sharp": "^0.33.4",
+    "vitepress": "^1.0.0-rc.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huangbohang/huangbohang.github.io"
+  },
+  "dependencies": {}
+}

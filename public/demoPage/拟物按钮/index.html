@@ -1,0 +1,62 @@
+<!--
+ * @Author: your name
+ * @Date: 2023-10-03 18:52:07
+ * @LastEditTime: 2023-10-03 19:11:11
+ * @LastEditors: DESKTOP-536UVPC
+ * @Description: In User Settings Edit
+ * @FilePath: \css-special-effects\拟物按钮.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拟物按钮</title>
+</head>
+
+<body>
+    <div class="btn">H</div>
+</body>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-color: #f0f0ee;
+    }
+
+    .btn {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        font-size: 48px;
+        color: #333;
+        /* 禁止文本选中 */
+        user-select: none;
+        cursor: pointer;
+        /* 文字立体阴影效果 */
+        text-shadow: 2px 2px 2px #ccc;
+        /* 盒子阴影，立体效果 */
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2),
+            -20px -20px 30px rgba(255, 255, 255, 1);
+        transition: all 0.4s ease-out;
+    }
+    .btn:hover{
+        box-shadow: 
+        0 0 0 rgba(0, 0, 0, 0.2),
+        0 0 0 rgba(255, 255, 255, 0.8),
+        inset 10px 10px 20px rgba(0, 0, 0, 0.1),
+        inset -10px -10px 20px rgba(255, 255, 255, 1);
+        font-size: 46px;
+    }
+</style>
+
+</html>

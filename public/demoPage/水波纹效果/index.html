@@ -1,0 +1,67 @@
+<!--
+ * @Author: your name
+ * @Date: 2023-10-03 19:17:31
+ * @LastEditTime: 2023-10-03 19:31:30
+ * @LastEditors: DESKTOP-536UVPC
+ * @Description: In User Settings Edit
+ * @FilePath: \css-special-effects\水波纹效果.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水波纹效果</title>
+</head>
+<body>
+    <div class="box">
+        <div class="text">Loading...</div>
+        <div class="text">Loading...</div>
+    </div>
+</body>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-color: #c3c3c3;
+    }
+    .box{
+        position: relative;
+    }
+    .text{
+        font-size: 100px;
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+    }
+    .text:nth-child(1){
+        color: transparent;
+        -webkit-text-stroke: 2px #348cca;
+    }
+    .text:nth-child(2){
+        color: #348cca;
+        /* 使用动画 */
+        animation: water 2s ease-in-out infinite alternate;
+    }
+    /* 定义动画 利用clip-path裁剪图形 */
+    @keyframes water{
+        0%{
+            clip-path: polygon(
+                31% 61%, 53% 65%, 77% 67%, 100% 68%,
+                100% 100%,0% 100%,0% 35%, 13% 52%
+            );
+        }
+        100%{
+            clip-path: polygon(
+                51% 68%, 71% 59%, 86% 44%, 100% 24%,
+                100% 100%, 0% 100%, 0% 72%, 28% 71%
+            );
+        }
+    }
+</style>
+</html>

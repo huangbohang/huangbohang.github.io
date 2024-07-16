@@ -1,0 +1,68 @@
+<!--
+ * @Author: your name
+ * @Date: 2023-10-03 14:42:44
+ * @LastEditTime: 2023-10-03 14:56:26
+ * @LastEditors: DESKTOP-536UVPC
+ * @Description: In User Settings Edit
+ * @FilePath: \css-special-effects\跳动的文字.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳动的文字</title>
+</head>
+
+<body>
+    <div class="loading-box">
+        <div class="loading-text">
+            <span style="--i:1">拼</span>
+            <span style="--i:2">命</span>
+            <span style="--i:3">加</span>
+            <span style="--i:4">载</span>
+            <span style="--i:5">中</span>
+            <span style="--i:6">.</span>
+            <span style="--i:7">.</span>
+            <span style="--i:8">.</span>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        margin: 0px;
+    }
+
+    .loading-box {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #191717de;
+    }
+
+    .loading-text {
+        color: #f0c6c6;
+        font-size: 32px;
+    }
+    .loading-text span{
+        display: inline-block;
+        animation: up-down 1.5s ease-in-out infinite;
+        animation-delay: calc(.1s*var(--i));
+    }
+    @keyframes up-down{
+        0%{
+            transform: translateY(0px);
+        }
+        20%{
+            transform: translateY(-24px);
+        }
+        40%,100%{
+            transform: translateY(0px);
+        }
+    }
+</style>
+
+</html>

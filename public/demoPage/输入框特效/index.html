@@ -1,0 +1,70 @@
+<!--
+ * @Author: your name
+ * @Date: 2023-10-03 15:01:00
+ * @LastEditTime: 2023-10-03 15:30:57
+ * @LastEditors: DESKTOP-536UVPC
+ * @Description: In User Settings Edit
+ * @FilePath: \css-special-effects\输入框特效.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输入框特效</title>
+</head>
+
+<body>
+    <div class="input-box">
+        <input type="text" required>
+        <span>Your Name</span>
+    </div>
+</body>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .input-box {
+        position: relative;
+        width: 250px;
+    }
+
+    .input-box input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #0855c2;
+        border-radius: 5px;
+        font-size: 1em;
+        outline: none;
+        color: #0855c2;
+    }
+
+    .input-box span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 10px;
+        font-size: 1em;
+        color: #a3b0c2;
+        pointer-events: none;
+        transition: all 0.5s;
+    }
+    .input-box input:valid ~ span,
+    .input-box input:focus ~ span{
+        color: #b9831e;
+        transform: translateX(10px) translateY(-7px);
+        font-size: 0.7em;
+        padding: 0 10px;
+        background-color: #fff;
+    }
+</style>
+
+</html>
