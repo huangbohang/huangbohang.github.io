@@ -1,17 +1,17 @@
 <template>
   <div class="card-list" ref="cardListRef">
-    <div
-      v-for="(item, index) in CardListData"
-      :key="index"
-      :animate-class="'active'"
-      class="card-list-item"
-      @click="openDialog(item, $event)"
-    >
-      <p>
-        <ImageItem :item="item" />
-      </p>
-      <span>{{ item.name }}</span>
-    </div>
+    <template v-for="(item, index) in CardListData" :key="index">
+      <div
+        class="card-list-item"
+        @click="openDialog(item, $event)"
+        :animate-class="'active'"
+      >
+        <p>
+          <ImageItem :item="item" />
+        </p>
+        <span>{{ item.name }}</span>
+      </div>
+    </template>
   </div>
   <div
     class="dialog"
@@ -105,7 +105,7 @@ onMounted(() => {
   useAnimate(cardListRef.value);
 });
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 $colors: (
   "start": #03a9f4,
   "middle-1": #f441a5,
@@ -123,7 +123,8 @@ $colors: (
   .aside {
     display: none;
   }
-  &-item {
+
+  .card-list-item {
     flex-basis: 32.3%;
     display: flex;
     flex-direction: column;
@@ -132,6 +133,16 @@ $colors: (
     transition: 0.5s ease-in-out;
     transform: scale(0);
     opacity: 0;
+    &:hover {
+      p {
+        &::after {
+          background-color: rgba(0, 0, 0, 0.25);
+        }
+        img {
+          transform: scale(1.25);
+        }
+      }
+    }
     p {
       width: 100%;
       height: 200px;
@@ -146,12 +157,9 @@ $colors: (
         width: 100%;
         height: 100%;
       }
-      &:hover {
-        &::after {
-          background-color: rgba(0, 0, 0, 0.25);
-        }
-      }
+
       img {
+        transition: 0.3s;
         width: 100%;
         height: 100%;
         object-fit: cover;

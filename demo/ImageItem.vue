@@ -44,6 +44,7 @@ const getImg = (item) => {
 figure {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 
   .place-holder {
     width: 100%;
