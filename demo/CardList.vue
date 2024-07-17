@@ -3,13 +3,12 @@
     <div
       v-for="(item, index) in CardListData"
       :key="index"
-      :animate-class="'fade-in'"
+      :animate-class="'active'"
       class="card-list-item"
       @click="openDialog(item, $event)"
     >
       <p>
-        <img :src="getImg(item)" loading="lazy" alt=""       @error="handleError($event, `/demoPage/${item.name}/snapshot.png`)" 
-        />
+        <ImageItem :item="item" />
       </p>
       <span>{{ item.name }}</span>
     </div>
@@ -50,7 +49,7 @@
 <script setup>
 import useStyle from "./hooks/useStyle.js";
 import useAnimate from "./hooks/useAnimate.js";
-
+import ImageItem from "./ImageItem.vue";
 import CardListData from "./CardList.json";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 const dialogVis = ref(false);
@@ -59,10 +58,7 @@ const cardListRef = ref(null);
 const codeVis = ref(false);
 
 useStyle();
-const handleError = (event, fallbackSrc) => {
-  // 替换图片 src 为降级图片
-  event.target.src = fallbackSrc;
-};
+
 const getPreView = (item) => {
   const { name } = item;
   return window.location.origin + `/demoPage/${name}/index.html`;
@@ -70,9 +66,7 @@ const getPreView = (item) => {
 const getCode = (item) => {
   return `${window.location.origin}/demo/source/${item.name}.html`;
 };
-const getImg = (item) => {
-  return `/demoPage/${item.name}/snapshot.gif`;
-};
+
 const transformLeft = ref(0);
 const transformTop = ref(0);
 const beforeClose = ref(false);
@@ -124,6 +118,8 @@ $colors: (
   // justify-content: center;
   gap: 1%;
   margin-top: 16px;
+  position: relative;
+
   .aside {
     display: none;
   }
@@ -133,8 +129,17 @@ $colors: (
     flex-direction: column;
     border-radius: 16px;
     cursor: pointer;
-    transform: all 0.2s ease 0s;
-    opacity: 0;
+    transition: .5s;
+
+    &:nth-child(3n + 1) {
+      transform: translate(-400px, 0) scale(0);
+    }
+    &:nth-child(3n + 2) {
+      transform: translate(0, 400px) scale(0);
+    }
+    &:nth-child(3n + 3) {
+      transform: translate(400px, 0) scale(0);
+    }
     p {
       width: 100%;
       height: 200px;
@@ -310,9 +315,6 @@ $colors: (
   }
 }
 
-
-
-
 @media (max-width: 960px) {
   .card-list {
     &-item {
@@ -327,10 +329,8 @@ $colors: (
     }
   }
 }
-.fade-in {
-  animation-name: fadeInUp;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+.active {
+  transform: translate(0, 0) scale(1) !important;
 }
 @keyframes fadeInUp {
   from {

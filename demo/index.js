@@ -22,6 +22,9 @@ directories.forEach((dir) => {
   const cssFiles = fs.readdirSync(dirPath).filter((file) => {
     return path.extname(file).toLowerCase() === ".css";
   });
+  const jsFiles = fs.readdirSync(dirPath).filter((file) => {
+    return path.extname(file).toLowerCase() === ".js";
+  });
 
   const htmlFiles = fs.readdirSync(dirPath).filter((file) => {
     return path.extname(file).toLowerCase() === ".html";
@@ -39,6 +42,9 @@ title: ${dir}
   }
 
   cssFiles.forEach((file) => {
+    mdContent += `<<< @/public/demoPage/${dir}/${file}\n`;
+  });
+  jsFiles.forEach((file) => {
     mdContent += `<<< @/public/demoPage/${dir}/${file}\n`;
   });
 
