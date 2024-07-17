@@ -129,17 +129,9 @@ $colors: (
     flex-direction: column;
     border-radius: 16px;
     cursor: pointer;
-    transition: .5s;
-
-    &:nth-child(3n + 1) {
-      transform: translate(-400px, 0) scale(0);
-    }
-    &:nth-child(3n + 2) {
-      transform: translate(0, 400px) scale(0);
-    }
-    &:nth-child(3n + 3) {
-      transform: translate(400px, 0) scale(0);
-    }
+    transition: 0.5s ease-in-out;
+    transform: scale(0);
+    opacity: 0;
     p {
       width: 100%;
       height: 200px;
@@ -330,7 +322,8 @@ $colors: (
   }
 }
 .active {
-  transform: translate(0, 0) scale(1) !important;
+  transform: scale(1) !important;
+  opacity: 1 !important;
 }
 @keyframes fadeInUp {
   from {
