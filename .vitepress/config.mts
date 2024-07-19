@@ -96,18 +96,27 @@ export default defineConfig({
       },
       { text: "关于我", link: "/about/", activeMatch: "^/about/" },
     ],
-    
+
     sidebar: {
       "/summary/": [
         {
           text: "问题收纳",
           items: [
             {
-              text: "Element ui扩展",
+              text: "Vue2",
               items: [
                 {
                   text: "动态修改checkbox勾选框颜色",
                   link: "/summary/solution/checkbox_change_color",
+                },
+              ],
+            },
+            {
+              text: "Vue3",
+              items: [
+                {
+                  text: "css变量动态修改",
+                  link: "/summary/solution/JsInStyles/index",
                 },
               ],
             },
@@ -312,5 +321,4 @@ export default defineConfig({
 
     socialLinks: [{ icon: "github", link: "https://github.com/huangbohang" }],
   },
-
 });
