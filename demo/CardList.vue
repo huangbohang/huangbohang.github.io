@@ -43,7 +43,7 @@
       </p>
     </div>
   </div>
-  <span class="top" @click="scrollTop">🔝</span>
+  <span class="top-icon" @click="scrollTop">🔝</span>
 </template>
 
 <script setup>
@@ -344,7 +344,7 @@ $colors: (
   }
 }
 
-.top {
+.top-icon {
   position: fixed;
   right: 5%;
   bottom: 20px;
