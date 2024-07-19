@@ -33,9 +33,10 @@
       </div>
 
       <p>
-        <a @click.stop :href="getCode(activeItem)" target="_blank">简易源码</a>
+        <a @click.stop :href="getCode(activeItem)" target="_blank" class="beautiful-button">简易源码</a>
         <a
           @click.stop
+          class="beautiful-button"
           :href="`https://github.com/huangbohang/huangbohang.github.io/blob/main/public/demoPage/${activeItem.name}/index.html`"
           target="_blank"
           >完整源码</a
@@ -227,70 +228,70 @@ $colors: (
       right: 20px;
       top: 20px;
 
-      a {
-        /* 相对定位 */
-        position: relative;
-        padding: 5px 20px;
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 14px;
-        color: #fff;
-        /* 渐变背景 */
-        background: linear-gradient(
-          to right,
-          map-get($colors, "start"),
-          map-get($colors, "middle-1"),
-          map-get($colors, "middle-2"),
-          map-get($colors, "end")
-        );
-        /* 背景渐变色大小 */
-        background-size: 400%;
-        /* 圆角 */
-        border-radius: 50px;
-        z-index: 1;
-      }
-      /* 发光效果 */
-      a::before {
-        content: "";
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        bottom: -5px;
-        right: -5px;
-        /* 渐变背景 */
-        background: linear-gradient(
-          to right,
-          map-get($colors, "start"),
-          map-get($colors, "middle-1"),
-          map-get($colors, "middle-2"),
-          map-get($colors, "end")
-        );
-        /* 背景渐变色大小 */
-        background-size: 400%;
-        /* 圆角 */
-        border-radius: 50px;
-        /* 位于按钮之下 */
-        z-index: -1;
-        /* 设置模糊度 显示发光效果 */
-        filter: blur(20px);
-      }
-      /* 鼠标移入执行动画 */
-      a:hover {
-        /* 动画：名称 时间 infinite是无限次播放 */
-        animation: streamer 8s infinite;
-      }
-      a:hover::before {
-        animation: streamer 8s infinite;
-      }
-      /* 接下来定义动画 */
-      @keyframes streamer {
-        100% {
-          /* 背景位置 */
-          background-position: -400% 0;
-        }
-      }
+      // a {
+      //   /* 相对定位 */
+      //   position: relative;
+      //   padding: 5px 20px;
+      //   cursor: pointer;
+      //   text-align: center;
+      //   text-decoration: none;
+      //   text-transform: uppercase;
+      //   font-size: 14px;
+      //   color: #fff;
+      //   /* 渐变背景 */
+      //   background: linear-gradient(
+      //     to right,
+      //     map-get($colors, "start"),
+      //     map-get($colors, "middle-1"),
+      //     map-get($colors, "middle-2"),
+      //     map-get($colors, "end")
+      //   );
+      //   /* 背景渐变色大小 */
+      //   background-size: 400%;
+      //   /* 圆角 */
+      //   border-radius: 50px;
+      //   z-index: 1;
+      // }
+      // /* 发光效果 */
+      // a::before {
+      //   content: "";
+      //   position: absolute;
+      //   top: -5px;
+      //   left: -5px;
+      //   bottom: -5px;
+      //   right: -5px;
+      //   /* 渐变背景 */
+      //   background: linear-gradient(
+      //     to right,
+      //     map-get($colors, "start"),
+      //     map-get($colors, "middle-1"),
+      //     map-get($colors, "middle-2"),
+      //     map-get($colors, "end")
+      //   );
+      //   /* 背景渐变色大小 */
+      //   background-size: 400%;
+      //   /* 圆角 */
+      //   border-radius: 50px;
+      //   /* 位于按钮之下 */
+      //   z-index: -1;
+      //   /* 设置模糊度 显示发光效果 */
+      //   filter: blur(20px);
+      // }
+      // /* 鼠标移入执行动画 */
+      // a:hover {
+      //   /* 动画：名称 时间 infinite是无限次播放 */
+      //   animation: streamer 8s infinite;
+      // }
+      // a:hover::before {
+      //   animation: streamer 8s infinite;
+      // }
+      // /* 接下来定义动画 */
+      // @keyframes streamer {
+      //   100% {
+      //     /* 背景位置 */
+      //     background-position: -400% 0;
+      //   }
+      // }
     }
   }
 }

@@ -103,8 +103,9 @@ export default defineConfig({
           text: "问题收纳",
           items: [
             {
-              text: "Vue2",
+              text: "Vue",
               items: [
+             
                 {
                   text: "动态修改checkbox勾选框颜色",
                   link: "/summary/solution/checkbox_change_color",
@@ -112,11 +113,15 @@ export default defineConfig({
               ],
             },
             {
-              text: "Vue3",
+              text: "简短代码",
               items: [
                 {
-                  text: "css变量动态修改",
-                  link: "/summary/solution/JsInStyles/index",
+                  text: "JavaScript一行代码",
+                  link: "/summary/solution/JsInline/index",
+                },
+                {
+                  text: "可一键复制粘贴效果组",
+                  link: "/summary/solution/ShortTips/index",
                 },
               ],
             },
