@@ -134,6 +134,10 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: "前端调试技巧",
+              link: "https://juejin.cn/post/7388338139633532979",
+            },
 
             // {
             //   text: "Electron实战",
