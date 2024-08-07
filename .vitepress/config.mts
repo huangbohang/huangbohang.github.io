@@ -129,6 +129,10 @@ export default defineConfig({
               text: "第三方库",
               items: [
                 {
+                  text: "gitlab私有化部署",
+                  link: "/summary/solution/gitLab",
+                },
+                {
                   text: "FullCalendar 中 24:00 修改成00:00",
                   link: "/summary/solution/fullCalendar",
                 },
