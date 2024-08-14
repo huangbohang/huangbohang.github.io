@@ -238,6 +238,10 @@ export default defineConfig({
               text: "Javascript",
               items: [
                 {
+                  text: "Js原型链",
+                  link: "https://juejin.cn/post/7402204174065696795",
+                },
+                {
                   text: "JS垃圾回收机制",
                   link: "/question/javascript/carbage_recovery_mechanism",
                 },
@@ -263,6 +267,7 @@ export default defineConfig({
                 },
               ],
             },
+          
             {
               text: "Vue",
               items: [
