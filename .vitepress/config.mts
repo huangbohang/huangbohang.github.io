@@ -105,7 +105,6 @@ export default defineConfig({
             {
               text: "Vue",
               items: [
-             
                 {
                   text: "动态修改checkbox勾选框颜色",
                   link: "/summary/solution/checkbox_change_color",
@@ -230,6 +229,22 @@ export default defineConfig({
           ],
         },
       ],
+      "/demo/": [
+        {
+          text: "简易案例（含源码）",
+          link: "/demo/easyDemo",
+        },
+        {
+          text: "收集案例",
+          link: "/demo/collectCase",
+          items:[
+            // {
+            //   text: "超级面试",
+            //   link: "https://huangbohang.github.io/demo1",
+            // }
+          ]
+        },
+      ],
       "/question/": [
         {
           text: "前端知识点",
@@ -267,7 +282,7 @@ export default defineConfig({
                 },
               ],
             },
-          
+
             {
               text: "Vue",
               items: [
