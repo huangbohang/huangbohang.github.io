@@ -33,7 +33,16 @@ export default defineConfig({
     nav: [
       { text: "问题收纳", link: "/summary/", activeMatch: "^/summary/" },
       { text: "前端知识点", link: "/question/", activeMatch: "^/question/" },
-      { text: "简易Demo", link: "/demo/", activeMatch: "^/demo/" },
+      { text: "效果展示",  activeMatch: "^/demo/", items: [
+        {
+          text: "简易demo",
+          link: "/demo/easyDemo",
+        },
+        {
+          text: "演示案例",
+          link: "/demo/collectCase",
+        },
+      ], },
       {
         text: "友情链接",
         items: [
@@ -197,14 +206,14 @@ export default defineConfig({
           link: "/demo/easyDemo",
         },
         {
-          text: "收集案例",
+          text: "演示案例",
           link: "/demo/collectCase",
-          items: [
-            // {
-            //   text: "超级面试",
-            //   link: "https://huangbohang.github.io/demo1",
-            // }
-          ],
+          items:[
+            {
+              text: "面试宝典",
+              link: "https://huangbohang.github.io/demo1",
+            }
+          ]
         },
       ],
       "/question/": [
