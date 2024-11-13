@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+const isDevelopment = process.env.NODE_ENV === 'development'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -8,50 +9,9 @@ export default defineConfig({
     ["meta", { name: "robots", content: "index,follow" }],
     ["meta", { name: "referrer", content: "no-referrer" }],
     [
-      "meta",
-      {
-        name: "keywords",
-        content:
-          "黄博航的博客,huangbohang's Blog,huangbohang,huangbohang,huangbohang,黄博航,徐涛涛,徐涛,blog,Blog,技术博客,博客,个人博客,技术总结,问题解析,个人成长,前端,JavaScript,Vue,React,网络,Electron,Node.js,TypeScript,Rust",
-      },
-    ],
-    [
-      "script",
-      {},
-      `window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-TB63M8G2D6');`,
-    ],
-    [
-      "script",
-      {},
-      `(function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "mdde12font")`,
-    ],
-    [
-      "script",
-      {},
-      `window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'TAG_ID');`,
-    ],
-    [
-      "script",
-      {},
-      `var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?48d31a1ec82cedac903f0150d2e000d9";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();`,
-    ],
+      'script',
+      { src: isDevelopment ? '' : 'https://hm.baidu.com/hm.js?34814da6a27723ff8a5c8329db396f07' }
+    ]
   ],
   transformPageData(pageData) {
     const canonicalUrl = `https://huangbohangxu.com/${pageData.relativePath}`
