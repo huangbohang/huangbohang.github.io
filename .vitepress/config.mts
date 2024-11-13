@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-const isDevelopment = process.env.NODE_ENV === 'development'
+const isDevelopment = process.env.NODE_ENV === "development";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -9,21 +9,15 @@ export default defineConfig({
     ["meta", { name: "robots", content: "index,follow" }],
     ["meta", { name: "referrer", content: "no-referrer" }],
     [
-      'script',
-      { src: isDevelopment ? '' : 'https://hm.baidu.com/hm.js?34814da6a27723ff8a5c8329db396f07' }
-    ]
+      "script",
+      {
+        src: isDevelopment
+          ? ""
+          : "https://hm.baidu.com/hm.js?34814da6a27723ff8a5c8329db396f07",
+      },
+    ],
   ],
-  transformPageData(pageData) {
-    const canonicalUrl = `https://huangbohangxu.com/${pageData.relativePath}`
-      .replace(/index\.md$/, "")
-      .replace(/\.md$/, ".html");
 
-    pageData.frontmatter.head ??= [];
-    pageData.frontmatter.head.push([
-      "link",
-      { rel: "canonical", href: canonicalUrl },
-    ]);
-  },
   appearance: "dark",
   lastUpdated: true,
   title: "技术总结备忘录",
@@ -40,7 +34,15 @@ export default defineConfig({
       { text: "问题收纳", link: "/summary/", activeMatch: "^/summary/" },
       { text: "前端知识点", link: "/question/", activeMatch: "^/question/" },
       { text: "简易Demo", link: "/demo/", activeMatch: "^/demo/" },
-
+      {
+        text: "友情链接",
+        items: [
+          {
+            text: "茂茂物语",
+            link: "https://notes.fe-mm.com/",
+          },
+        ],
+      },
       {
         text: "开源项目",
         items: [
@@ -197,12 +199,12 @@ export default defineConfig({
         {
           text: "收集案例",
           link: "/demo/collectCase",
-          items:[
+          items: [
             // {
             //   text: "超级面试",
             //   link: "https://huangbohang.github.io/demo1",
             // }
-          ]
+          ],
         },
       ],
       "/question/": [
