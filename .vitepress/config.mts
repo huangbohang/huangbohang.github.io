@@ -32,7 +32,7 @@ export default defineConfig({
 
     nav: [
       { text: "问题收纳", link: "/summary/", activeMatch: "^/summary/" },
-      { text: "前端知识点", link: "/question/", activeMatch: "^/question/" },
+      { text: "我爱学习", link: "/question/", activeMatch: "^/question/" },
       { text: "效果展示",  activeMatch: "^/demo/", items: [
         {
           text: "简易demo",
@@ -80,6 +80,10 @@ export default defineConfig({
                   text: "动态修改checkbox勾选框颜色",
                   link: "/summary/solution/checkbox_change_color",
                 },
+                {
+                  text: "vue3+element plus 子组件触发form校验",
+                  link: "/summary/solution/form_valid_form_child",
+                }
               ],
             },
             {
@@ -111,6 +115,10 @@ export default defineConfig({
             {
               text: "前端调试技巧",
               link: "https://juejin.cn/post/7388338139633532979",
+            },
+            {
+              text: "微服务",
+              link: "/summary/solution/micro_frontends",
             },
 
             // {
@@ -218,7 +226,7 @@ export default defineConfig({
       ],
       "/question/": [
         {
-          text: "前端知识点",
+          text: "我爱学习",
           items: [
             {
               text: "Javascript",
@@ -318,6 +326,15 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: "python",
+              items:[
+                {
+                  text: "python基础",
+                  link: "/question/python/python_base",
+                }
+              ]
+            }
           ],
         },
       ],
